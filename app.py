@@ -37,7 +37,7 @@ def format_card_number(num):
     return f'{num_str[:4]}-{num_str[4:8]}-{num_str[8:12]}-{num_str[12:]}'
 
 
-df = pd.read_csv("data/add_df.csv")
+df = pd.read_csv("data/app_df.csv")
 의심리스트_데이터 = pd.read_csv("data/의심리스트_df.csv", encoding='cp949')
 카드태그_데이터 = pd.read_csv("data/카드태그_df.csv", encoding='cp949')
 블랙리스트_데이터 = pd.read_csv("data/블랙리스트_df.csv", encoding='cp949')
