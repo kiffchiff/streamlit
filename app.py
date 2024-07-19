@@ -15,11 +15,11 @@ plt.rcParams['axes.unicode_minus'] = False
 
 ## 데이터프레임 일부 행 표시 함수 - head는 style 메소드 지원 안해서 따로적용
 def display_dataframe(df, n=10, styled=False):
-    """Display first n rows of the dataframe"""
+    random_rows = df.sample(n=n)
     if styled:
-        st.dataframe(df.data.head(n).style.map(highlight_counts, subset=['횟수']))
+        st.dataframe(random_rows.style.applymap(highlight_counts, subset=['횟수']))
     else:
-        st.dataframe(df.head(n))
+        st.dataframe(random_rows)
 
 
 ## 횟수 8이상 강조표시 함수생성
@@ -80,8 +80,7 @@ if choose == '통합-대시보드':
     with col1:    
     #의심리스트 데이터
         st.subheader('의심리스트')
-        styled_df = 의심리스트_데이터.style.map(highlight_counts, subset=['횟수'])
-        display_dataframe(styled_df, n=10, styled=True)
+        display_dataframe(의심리스트_데이터, n=10, styled=True)
 
         #의심리스트에서 선택한 카드 블랙리스트로 이동
         suspicious_cards = st.multiselect(
