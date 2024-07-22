@@ -36,7 +36,14 @@ def format_card_number(num):
     num_str = f'{num:016d}'  # 16자리로 패딩
     return f'{num_str[:4]}-{num_str[4:8]}-{num_str[8:12]}-{num_str[12:]}'
 
-
+# path = 
+# station_images = {
+#     '구로디지털단지':['images/...jpg','' , '' ... ],
+#     '을지로입구' : ['', '', '' ... ],
+#     '압구정' : ['', '', '' ... ],
+#     '남구로' : ['', '', '' ... ],
+#     '철산' : ['', '', ''...]
+# }
 df = pd.read_csv("data/app_df.csv")
 의심리스트_데이터 = pd.read_csv("data/의심리스트_df.csv", encoding='cp949')
 카드태그_데이터 = pd.read_csv("data/카드태그_df.csv", encoding='cp949')
@@ -137,6 +144,10 @@ elif choose == '영상':
     station = list(df['역명'].unique())
     selected_station = st.sidebar.selectbox('역을 선택하세요', station)
     st.subheader(f'{selected_station} 영상')
+    
+    # if selected_station in station_images:
+    # image_path = station_images[selected_station]
+    # st.image(image_path, caption=f'{selected_station} 사진')
 
 
 elif choose == '블랙리스트': 
