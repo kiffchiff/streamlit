@@ -37,7 +37,7 @@ def format_card_number(num):
     return f'{num_str[:4]}-{num_str[4:8]}-{num_str[8:12]}-{num_str[12:]}'
  
 station_images = {
-    '구로디지털단지':['images/구로_1.png', 'images/구로_2.png'],
+    '구로디지털단지':['images/구로_1.png', 'images/구로_2.jpg'],
     '을지로입구' : ['images/을지로_1.png', 'images/을지로_2.png'],
     '압구정' : ['images/압구정.jpg'],
     '남구로' : ['images/남구로.png'],
