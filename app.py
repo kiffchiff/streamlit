@@ -145,8 +145,9 @@ elif choose == '영상':
     st.subheader(f'{selected_station} 영상')
     
     if selected_station in station_images:
-        image_path = station_images[selected_station]
-        st.image(image_path, caption=f'{selected_station} 사진')
+        image_paths = station_images[selected_station]
+        for image_path in image_paths:
+            st.image(image_path, caption=f'{selected_station} 사진')
 
 
 elif choose == '블랙리스트': 
